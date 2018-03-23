@@ -1,0 +1,50 @@
+<suite name="Test Suite" verbose="1">
+
+    <test name="Home">
+        <classes>
+            <class name="com.wc.getgo.selenium.test.Home.test.HomeTest"/>
+        </classes>
+    </test>
+
+    <test name="Contact Us">
+        <classes>
+            <class name="com.wc.getgo.selenium.test.ContactUs.test.ContactUsTest"/>
+        </classes>
+    </test>
+
+    <test name="Debit Card">
+        <classes>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardApplicationTest"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardApplicationTest_2"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardApplicationTest_3"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardApplicationTest_4"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardApplicationTest_5"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardApplicationTest_6"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardApplicationTest_7"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardApplicationTest_8"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardApplicationTest_9"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardApplicationTest_10"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardApplicationTest_11"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardApplicationTest_12"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardApplicationTest_13"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardApplicationTest_14"/>
+        </classes>
+    </test>
+
+    <test name="Credit Card">
+        <classes>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardApplicationTest"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardApplicationTest_2"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardApplicationTest_3"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardApplicationTest_4"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardApplicationTest_5"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardApplicationTest_6"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardApplicationTest_7"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardApplicationTest_8"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardApplicationTest_9"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardApplicationTest_10"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardApplicationTest_11"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardApplicationTest_12"/>
+        </classes>
+    </test>
+</suite>
