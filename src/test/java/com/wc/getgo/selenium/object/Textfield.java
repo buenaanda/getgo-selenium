@@ -44,7 +44,6 @@ public class Textfield {
     }
 
     public Textfield setText(String text) {
-        sleep(500);
         selectAll();
         backspace();
         this.element.sendKeys(text);

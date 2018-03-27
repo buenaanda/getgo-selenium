@@ -11,6 +11,7 @@ import static com.wc.getgo.selenium.test.CardApplication.method.CardApplication.
 import static com.wc.getgo.selenium.test.Menu.method.NavigationMenu.navigationMenu;
 import static com.wc.getgo.selenium.test.ReviewApplication.locator.LocatorsReviewApplicationPage.locatorsReviewApplicationPage;
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 public class CreditCardApplicationTest_7 extends Seleniumbase {
@@ -128,7 +129,8 @@ public class CreditCardApplicationTest_7 extends Seleniumbase {
         assertTrue(navigationMenu().clickDebitCard());
         assertTrue(banner().clickDebitCardApplyNow());
         assertTrue(banner().clickNo());
-        assertTrue(banner().clickNext());
-        assertTrue(seleniumExtension().isElementVisible("xpath", locatorsCardApplicationPage().salutationDropdown()));
+        assertFalse(banner().clickNext());
+        assertFalse(seleniumExtension().isElementVisible("xpath", locatorsCardApplicationPage().salutationDropdown()));
+        //TODO forget/not forget active application
     }
 }

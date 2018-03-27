@@ -61,6 +61,11 @@ public class Banner {
         return seleniumExtension().isElementVisible("xpath", locatorsCardApplicationPage().firstNameTextfield());
     }
 
+//    public boolean clickForgetYes() {
+//        clickButton(driver).xpath(locatorsBanner().yesButton()).click();
+//
+//    }
+
     public boolean clickCloseInvalidProductId() {
         clickButton(driver).xpath(locatorsBanner().invalidCreditCardProdIDModalCloseButton()).click();
         sleep(1000);

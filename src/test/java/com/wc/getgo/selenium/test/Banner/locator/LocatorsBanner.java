@@ -46,6 +46,14 @@ public class LocatorsBanner {
         return "//div[@style='display: block;']/div/div/form/div/div[2]/div[1]/button";
     }
 
+    public String yesButton() {
+        return "//idv[@class='active-review']/form/div/button[@name='forget']";
+    }
+
+    public String noButton() {
+        return "//idv[@class='active-review']/form/div/button[@name='notForget']";
+    }
+
     public String applyModal() {
         return "//div[@class='modal-content signupbox']";
     }
