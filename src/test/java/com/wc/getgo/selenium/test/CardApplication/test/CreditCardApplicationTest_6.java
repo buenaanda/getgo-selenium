@@ -1,13 +1,10 @@
 package com.wc.getgo.selenium.test.CardApplication.test;
 
 import com.wc.getgo.selenium.common.Seleniumbase;
-import org.openqa.selenium.JavascriptExecutor;
-import org.sikuli.script.FindFailed;
 import org.testng.annotations.Test;
 
 import static com.wc.getgo.selenium.global.GenerateFakeData.generateFakeData;
 import static com.wc.getgo.selenium.global.SeleniumExtension.seleniumExtension;
-import static com.wc.getgo.selenium.global.Sleep.sleep;
 import static com.wc.getgo.selenium.test.Banner.method.Banner.banner;
 import static com.wc.getgo.selenium.test.CardApplication.method.CardApplication.cardApplication;
 import static com.wc.getgo.selenium.test.Menu.method.NavigationMenu.navigationMenu;
@@ -18,7 +15,7 @@ import static org.testng.Assert.assertTrue;
 
 public class CreditCardApplicationTest_6 extends Seleniumbase {
 
-    //QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg
+    /** QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg **/
 
     private String title = generateFakeData().title();
     private String firstName = generateFakeData().firstName();
@@ -49,7 +46,7 @@ public class CreditCardApplicationTest_6 extends Seleniumbase {
     private String businessPhoneNumber = "01324343";
     private String sss = generateFakeData().sssNumber();
     private String totalYearsInWorkOrBusiness = generateFakeData().yearsOfStay();
-    private String grossAnualIncome = generateFakeData().grossAnnualIncome();
+    private String grossAnnualIncome = generateFakeData().grossAnnualIncome();
 
     @Test
     public void verifyIssueNumber25Test() {
@@ -89,7 +86,7 @@ public class CreditCardApplicationTest_6 extends Seleniumbase {
                 .setWorkPhoneNumber(businessPhoneNumber)
                 .clickSSS()
                 .setSSS(sss)
-                .setGrossAnnualIncome(grossAnualIncome)
+                .setGrossAnnualIncome(grossAnnualIncome)
                 .checkPension()
                 .clickExistingCreditCardholderYes()
                 .selectCardBankName1("Banco De Oro")

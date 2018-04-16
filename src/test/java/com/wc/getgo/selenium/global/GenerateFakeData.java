@@ -148,7 +148,7 @@ public class GenerateFakeData {
     }
 
     public String nationality() {
-        String[] nationality = {"", "Afghanistan", "American Samoa", "Antigua and Barbuda", "Bahamas", "Bonaire, Sint Eustatius, and Saba", "Cape Verde", "El Salvador", "Ethiopia", "Fiji", "Philippines", "Manufacturing", "Gambia", "Heard and Mcdonald Islands", "Malaysia", "Martinique", "Senegal", "Uganda", "United States", "Viet Nam", "Western Sahara"};
+        String[] nationality = {"", "Afghanistan", "American Samoa", "Antigua and Barbuda", "Bahamas", "Bonaire, Sint Eustatius, and Saba", "Cape Verde", "El Salvador", "Ethiopia", "Fiji", "Philippines", "Gambia", "Heard and Mcdonald Islands", "Malaysia", "Martinique", "Senegal", "Uganda", "United States", "Viet Nam", "Western Sahara"};
         int n = randomNumber().generateRandomRangeNumber(1, nationality.length - 1);
         return nationality[n];
     }
@@ -186,8 +186,9 @@ public class GenerateFakeData {
     }
 
     public String firstName() {
-        generatePersonData();
-        return person.firstName();
+        /*generatePersonData();
+        return person.firstName();*/
+        return "Test";
     }
 
     public String middleName() {

@@ -1,6 +1,10 @@
 package com.wc.getgo.selenium.test.CardApplication.method;
 
-import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.FindFailed;
 import org.sikuli.script.Screen;
 
@@ -109,7 +113,7 @@ public class CardApplication {
     public CardApplication checkSameAsPresentAddress() {
         if(seleniumExtension().xpath(locatorsCardApplicationPage().sameAsPresentAddressCheckbox()).isSelected() == false) {
             checkbox(driver).xpath(locatorsCardApplicationPage().sameAsPresentAddressCheckbox()).check();
-            sleep(2000);
+            sleep(1000);
         }
         return this;
     }
@@ -117,7 +121,7 @@ public class CardApplication {
     public CardApplication uncheckSameAsPresentAddress() {
         if(seleniumExtension().xpath(locatorsCardApplicationPage().sameAsPresentAddressCheckbox()).isSelected() == true) {
             checkbox(driver).xpath(locatorsCardApplicationPage().sameAsPresentAddressCheckbox()).check();
-            sleep(2000);
+            sleep(1000);
         }
         return this;
     }
@@ -228,11 +232,23 @@ public class CardApplication {
     }
 
     public CardApplication setWorkPhoneNumberAreaCode(String workPhoneNumberAreaCode) {
+        int lengthText = seleniumExtension().getValue("xpath", locatorsCardApplicationPage().workPhoneNumberAreaCodeTextfield()).length();
+        if(lengthText != 0) {
+            for(int i=1;i<=lengthText;i++) {
+                textfield(driver).xpath(locatorsCardApplicationPage().workPhoneNumberAreaCodeTextfield()).backspace();
+            }
+        }
         textfield(driver).xpath(locatorsCardApplicationPage().workPhoneNumberAreaCodeTextfield()).setText(workPhoneNumberAreaCode);
         return this;
     }
 
     public CardApplication setWorkPhoneNumber(String workPhoneNumber) {
+        int lengthText = seleniumExtension().getValue("xpath", locatorsCardApplicationPage().workPhoneNumberTextfield()).length();
+        if(lengthText != 0) {
+            for(int i=1;i<=lengthText;i++) {
+                textfield(driver).xpath(locatorsCardApplicationPage().workPhoneNumberTextfield()).backspace();
+            }
+        }
         textfield(driver).xpath(locatorsCardApplicationPage().workPhoneNumberTextfield()).setText(workPhoneNumber);
         return this;
     }
@@ -243,6 +259,12 @@ public class CardApplication {
     }
 
     public CardApplication setTIN(String tin) {
+        int lengthText = seleniumExtension().getValue("xpath", locatorsCardApplicationPage().tinTextfield()).length();
+        if(lengthText != 0) {
+            for(int i=1;i<=lengthText;i++) {
+                textfield(driver).xpath(locatorsCardApplicationPage().tinTextfield()).backspace();
+            }
+        }
         textfield(driver).xpath(locatorsCardApplicationPage().tinTextfield()).setText(tin);
         return this;
     }
@@ -253,6 +275,12 @@ public class CardApplication {
     }
 
     public CardApplication setSSS(String sss) {
+        int lengthText = seleniumExtension().getValue("xpath", locatorsCardApplicationPage().sssTextfield()).length();
+        if(lengthText != 0) {
+            for(int i=1;i<=lengthText;i++) {
+                textfield(driver).xpath(locatorsCardApplicationPage().sssTextfield()).backspace();
+            }
+        }
         textfield(driver).xpath(locatorsCardApplicationPage().sssTextfield()).setText(sss);
         return this;
     }
@@ -263,6 +291,12 @@ public class CardApplication {
     }
 
     public CardApplication setGSIS(String gsis) {
+        int lengthText = seleniumExtension().getValue("xpath", locatorsCardApplicationPage().gsisTextfield()).length();
+        if(lengthText != 0) {
+            for(int i=1;i<=lengthText;i++) {
+                textfield(driver).xpath(locatorsCardApplicationPage().gsisTextfield()).backspace();
+            }
+        }
         textfield(driver).xpath(locatorsCardApplicationPage().gsisTextfield()).setText(gsis);
         return this;
     }
@@ -415,6 +449,10 @@ public class CardApplication {
     }
 
     public CardApplication clickExistingCreditCardholderNo() {
+        WebElement element = driver.findElement(By.xpath(locatorsCardApplicationPage().existingCreditCardholderNoRadioButton()));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(false);", element);
+        sleep(500);
+
         clickButton(driver).xpath(locatorsCardApplicationPage().existingCreditCardholderNoRadioButton()).click();
         return this;
     }
@@ -449,7 +487,7 @@ public class CardApplication {
 
     public CardApplication clickAdd() {
         clickButton(driver).xpath(locatorsCardApplicationPage().addCreditCardButton()).click();
-        sleep(2000);
+        sleep(1000);
         return this;
     }
 
@@ -465,19 +503,19 @@ public class CardApplication {
             screen.mouseMove("images/browse.png");
         }
         screen.doubleClick();
-        sleep(8000);
+        sleep(5000);
         return this;
     }
 
     public CardApplication searchFile(String filename) {
         screen.type(locatorsCardApplicationPage().searchField(), filename);
-        sleep(5000);
+        sleep(2000);
         return this;
     }
 
     public CardApplication clickFile(String filePath) throws FindFailed {
         screen.doubleClick(filePath);
-        sleep(3000);
+        sleep(1000);
         return this;
     }
 
@@ -488,13 +526,12 @@ public class CardApplication {
             screen.mouseMove("images/browse.png");
         }
         screen.doubleClick();
-        sleep(8000);
+        sleep(5000);
         return this;
     }
 
     public CardApplication clickUsePresentAddress() {
         clickButton(driver).xpath(locatorsCardApplicationPage().usePresentAddressRadioButton()).click();
-        textfield(driver).xpath(locatorsCardApplicationPage().usePresentAddressRadioButton()).pageDown();
         return this;
     }
 
@@ -531,7 +568,7 @@ public class CardApplication {
 
     public CardApplication clickAvailSupplementaryCardYes() {
         clickButton(driver).xpath(locatorsCardApplicationPage().availSupplementaryCardYesRadioButton()).click();
-        sleep(2000);
+        sleep(1000);
         return this;
     }
 
@@ -583,7 +620,7 @@ public class CardApplication {
     public CardApplication checkSupSameAsPresentAddress() {
         if(seleniumExtension().xpath(locatorsCardApplicationPage().supplementarySameAsPresentAddressCheckbox()).isSelected() == false) {
             checkbox(driver).xpath(locatorsCardApplicationPage().supplementarySameAsPresentAddressCheckbox()).check();
-            sleep(2000);
+            sleep(1000);
         }
         return this;
     }
@@ -591,7 +628,7 @@ public class CardApplication {
     public CardApplication uncheckSupSameAsPresentAddress() {
         if(seleniumExtension().xpath(locatorsCardApplicationPage().supplementarySameAsPresentAddressCheckbox()).isSelected() == true) {
             checkbox(driver).xpath(locatorsCardApplicationPage().supplementarySameAsPresentAddressCheckbox()).check();
-            sleep(2000);
+            sleep(1000);
         }
         return this;
     }
@@ -662,7 +699,6 @@ public class CardApplication {
     }
 
     public CardApplication checkAgreement() {
-        textfield(driver).xpath(locatorsCardApplicationPage().agreementCheckbox()).pageDown();
         if(seleniumExtension().xpath(locatorsCardApplicationPage().agreementCheckbox()).isSelected() == false) {
             checkbox(driver).xpath(locatorsCardApplicationPage().agreementCheckbox()).check();
         }
@@ -677,14 +713,30 @@ public class CardApplication {
     }
 
     public CardApplication checkImNotARobot() {
-        sikuliExtension().screenshot(locatorsCardApplicationPage().imNotARobotCheckbox()).mouseMove().doubleClick();
-        sleep(5000);
+        WebElement iFrameSwitch = driver.findElement(By.xpath("//iframe[@role='presentation']"));
+        driver.switchTo().frame(iFrameSwitch);
+        seleniumExtension().waitForElementVisible("id", "recaptcha-anchor");
+        WebElement element = driver.findElement(By.id("recaptcha-anchor"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+        sleep(500);
+        clickButton(driver).id("recaptcha-anchor").click();
+        sleep(3500);
+        int maxWait = 2;
+        while(seleniumExtension().isElementVisible("xpath", "//span[@id='recaptcha-anchor' and @aria-checked='false']") == true) {
+            seleniumExtension().waitForElementVisible("xpath", "//span[@id='recaptcha-anchor' and @aria-checked='true']");
+            maxWait = maxWait - 1;
+            if(maxWait == 0) {
+                break;
+            }
+        }
+        driver.switchTo().defaultContent();
+        sleep(1000);
         return this;
     }
 
     public Boolean clickSubmitForm() {
         clickButton(driver).xpath(locatorsCardApplicationPage().submitFormButton()).click();
-        sleep(2000);
+        sleep(1000);
         loader().waitForLoaderNotVisible();
         seleniumExtension().waitForElementVisible("xpath", locatorsReviewApplicationPage().editPersonalInformationButton());
         return seleniumExtension().isElementVisible("xpath", locatorsReviewApplicationPage().editPersonalInformationButton());

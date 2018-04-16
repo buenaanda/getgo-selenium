@@ -19,7 +19,8 @@ import static org.testng.Assert.assertTrue;
 public class CreditCardApplicationTest_11
         extends Seleniumbase {
 
-    //QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg
+    /** QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg **/
+
     private String mainURL = url;
     private String platValidUrl = String.format("%s/apply/registration?member=no&ggn=&con_ggn=&creditcard=2213&next=Next", mainURL);
     private String platValidUrl2 = String.format("%s/apply/registration?member=no&ggn=&con_ggn=&creditcard=2213&creditcard=2213&next=Next", mainURL);

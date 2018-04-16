@@ -20,7 +20,7 @@ import static org.testng.Assert.assertTrue;
 
 public class CreditCardApplicationTest_3 extends Seleniumbase {
 
-    //QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg
+    /** QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg **/
 
     private String title = generateFakeData().title();
     private String firstName = generateFakeData().firstName();
@@ -54,21 +54,21 @@ public class CreditCardApplicationTest_3 extends Seleniumbase {
     private String businessPhoneNumber = generateFakeData().phoneNumber();
     private String sss = generateFakeData().sssNumber();
     private String totalYearsInWorkOrBusiness = generateFakeData().yearsOfStay();
-    private String grossAnualIncome = generateFakeData().grossAnnualIncome();
+    private String grossAnnualIncome = generateFakeData().grossAnnualIncome();
 
     private Date date = new Date();
-    private SimpleDateFormat bdayMonthFormat = new SimpleDateFormat("MMM");
-    private SimpleDateFormat bdayDayFormat = new SimpleDateFormat("d");
-    private SimpleDateFormat bdayYearFormat = new SimpleDateFormat("YYYY");
+    private SimpleDateFormat bDayMonthFormat = new SimpleDateFormat("MMM");
+    private SimpleDateFormat bDayDayFormat = new SimpleDateFormat("d");
+    private SimpleDateFormat bDayYearFormat = new SimpleDateFormat("YYYY");
 
     private String supSalutation = generateFakeData().supTitle();
     private String supFirstName = generateFakeData().firstName();
     private String supMiddleName = "Anda";
     private String supLastName = generateFakeData().lastName();
     private String supNameToAppearOnCard = String.format("%s %s %s", supFirstName, supMiddleName.substring(0, 1), supLastName);
-    private String supBMonth = bdayMonthFormat.format(date);
-    private String supBYear = bdayYearFormat.format(date);
-    private String supDay = bdayDayFormat.format(date);
+    private String supBMonth = bDayMonthFormat.format(date);
+    private String supBYear = bDayYearFormat.format(date);
+    private String supDay = bDayDayFormat.format(date);
     private String relationshipWithThePrincipal = generateFakeData().relationshipWithPrincipal();
     private String supPresentAddress = generateFakeData().address();
     private String supPermanentAddress = generateFakeData().address();
@@ -121,7 +121,7 @@ public class CreditCardApplicationTest_3 extends Seleniumbase {
                 .setWorkPhoneNumber(businessPhoneNumber)
                 .clickSSS()
                 .setSSS(sss)
-                .setGrossAnnualIncome(grossAnualIncome)
+                .setGrossAnnualIncome(grossAnnualIncome)
                 .checkSalary()
                 .checkInvestment()
                 .clickBillingUseWorkAddress()

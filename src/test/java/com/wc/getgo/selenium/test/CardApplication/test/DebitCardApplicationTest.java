@@ -38,7 +38,7 @@ public class DebitCardApplicationTest extends Seleniumbase {
     private String businessIndustry = generateFakeData().businessIndustry();
     private String workProvince = "Antique";
     private String workCity = "Culasi";
-    private String othersTextfieldXpathWithClassLocator =  locatorsCardApplicationPage().othersTextfieldClass();
+    private String othersTextFieldXpathWithClassLocator =  locatorsCardApplicationPage().othersTextfieldClass();
     private static Calendar cal = Calendar.getInstance();
     private static Date date = new Date();
 
@@ -446,99 +446,99 @@ public class DebitCardApplicationTest extends Seleniumbase {
     public void verifyBusinessIncomeCheckboxTest() {
         cardApplication().checkBusinessIncome();
         assertTrue(seleniumExtension().xpath(locatorsCardApplicationPage().businessIncomeCheckbox()).isSelected());
-        assertFalse(seleniumExtension().getAttribute(othersTextfieldXpathWithClassLocator, "style").contains("block"));
+        assertFalse(seleniumExtension().getAttribute(othersTextFieldXpathWithClassLocator, "style").contains("block"));
 
         cardApplication().uncheckBusinessIncome();
         assertTrue(seleniumExtension().xpath(locatorsCardApplicationPage().businessIncomeCheckbox()).isUnselected());
-        assertFalse(seleniumExtension().getAttribute(othersTextfieldXpathWithClassLocator, "style").contains("block"));
+        assertFalse(seleniumExtension().getAttribute(othersTextFieldXpathWithClassLocator, "style").contains("block"));
     }
 
     @Test(dependsOnMethods = "verifyBusinessIncomeCheckboxTest")
     public void verifyRentalIncomeCheckboxTest() {
         cardApplication().checkRentalIncome();
         assertTrue(seleniumExtension().xpath(locatorsCardApplicationPage().rentalIncomeCheckbox()).isSelected());
-        assertFalse(seleniumExtension().getAttribute(othersTextfieldXpathWithClassLocator, "style").contains("block"));
+        assertFalse(seleniumExtension().getAttribute(othersTextFieldXpathWithClassLocator, "style").contains("block"));
 
         cardApplication().uncheckRentalIncome();
         assertTrue(seleniumExtension().xpath(locatorsCardApplicationPage().rentalIncomeCheckbox()).isUnselected());
-        assertFalse(seleniumExtension().getAttribute(othersTextfieldXpathWithClassLocator, "style").contains("block"));
+        assertFalse(seleniumExtension().getAttribute(othersTextFieldXpathWithClassLocator, "style").contains("block"));
     }
 
     @Test(dependsOnMethods = "verifyRentalIncomeCheckboxTest")
     public void verifyInvestmentCheckboxTest() {
         cardApplication().checkInvestment();
         assertTrue(seleniumExtension().xpath(locatorsCardApplicationPage().investmentCheckbox()).isSelected());
-        assertFalse(seleniumExtension().getAttribute(othersTextfieldXpathWithClassLocator, "style").contains("block"));
+        assertFalse(seleniumExtension().getAttribute(othersTextFieldXpathWithClassLocator, "style").contains("block"));
 
         cardApplication().uncheckInvestment();
         assertTrue(seleniumExtension().xpath(locatorsCardApplicationPage().investmentCheckbox()).isUnselected());
-        assertFalse(seleniumExtension().getAttribute(othersTextfieldXpathWithClassLocator, "style").contains("block"));
+        assertFalse(seleniumExtension().getAttribute(othersTextFieldXpathWithClassLocator, "style").contains("block"));
     }
 
     @Test(dependsOnMethods = "verifyInvestmentCheckboxTest")
     public void verifyPersonalSavingsCheckboxTest() {
         cardApplication().checkPersonalSavings();
         assertTrue(seleniumExtension().xpath(locatorsCardApplicationPage().personalSavingsCheckbox()).isSelected());
-        assertFalse(seleniumExtension().getAttribute(othersTextfieldXpathWithClassLocator, "style").contains("block"));
+        assertFalse(seleniumExtension().getAttribute(othersTextFieldXpathWithClassLocator, "style").contains("block"));
 
         cardApplication().uncheckPersonalSavings();
         assertTrue(seleniumExtension().xpath(locatorsCardApplicationPage().personalSavingsCheckbox()).isUnselected());
-        assertFalse(seleniumExtension().getAttribute(othersTextfieldXpathWithClassLocator, "style").contains("block"));
+        assertFalse(seleniumExtension().getAttribute(othersTextFieldXpathWithClassLocator, "style").contains("block"));
     }
 
     @Test(dependsOnMethods = "verifyPersonalSavingsCheckboxTest")
     public void verifySalarySavingsCheckboxTest() {
         cardApplication().checkSalary();
         assertTrue(seleniumExtension().xpath(locatorsCardApplicationPage().salaryCheckbox()).isSelected());
-        assertFalse(seleniumExtension().getAttribute(othersTextfieldXpathWithClassLocator, "style").contains("block"));
+        assertFalse(seleniumExtension().getAttribute(othersTextFieldXpathWithClassLocator, "style").contains("block"));
 
         cardApplication().uncheckSalary();
         assertTrue(seleniumExtension().xpath(locatorsCardApplicationPage().salaryCheckbox()).isUnselected());
-        assertFalse(seleniumExtension().getAttribute(othersTextfieldXpathWithClassLocator, "style").contains("block"));
+        assertFalse(seleniumExtension().getAttribute(othersTextFieldXpathWithClassLocator, "style").contains("block"));
     }
 
     @Test(dependsOnMethods = "verifySalarySavingsCheckboxTest")
     public void verifyInheritanceCheckboxTest() {
         cardApplication().checkInheritance();
         assertTrue(seleniumExtension().xpath(locatorsCardApplicationPage().inheritanceCheckbox()).isSelected());
-        assertFalse(seleniumExtension().getAttribute(othersTextfieldXpathWithClassLocator, "style").contains("block"));
+        assertFalse(seleniumExtension().getAttribute(othersTextFieldXpathWithClassLocator, "style").contains("block"));
 
         cardApplication().uncheckInheritance();
         assertTrue(seleniumExtension().xpath(locatorsCardApplicationPage().inheritanceCheckbox()).isUnselected());
-        assertFalse(seleniumExtension().getAttribute(othersTextfieldXpathWithClassLocator, "style").contains("block"));
+        assertFalse(seleniumExtension().getAttribute(othersTextFieldXpathWithClassLocator, "style").contains("block"));
     }
 
     @Test(dependsOnMethods = "verifyInheritanceCheckboxTest")
     public void verifySaleOfPropertyCheckboxTest() {
         cardApplication().checkSaleOfProperty();
         assertTrue(seleniumExtension().xpath(locatorsCardApplicationPage().saleOfPropertyCheckbox()).isSelected());
-        assertFalse(seleniumExtension().getAttribute(othersTextfieldXpathWithClassLocator, "style").contains("block"));
+        assertFalse(seleniumExtension().getAttribute(othersTextFieldXpathWithClassLocator, "style").contains("block"));
 
         cardApplication().uncheckSaleOfProperty();
         assertTrue(seleniumExtension().xpath(locatorsCardApplicationPage().saleOfPropertyCheckbox()).isUnselected());
-        assertFalse(seleniumExtension().getAttribute(othersTextfieldXpathWithClassLocator, "style").contains("block"));
+        assertFalse(seleniumExtension().getAttribute(othersTextFieldXpathWithClassLocator, "style").contains("block"));
     }
 
     @Test(dependsOnMethods = "verifySaleOfPropertyCheckboxTest")
     public void verifyPensionCheckboxTest() {
         cardApplication().checkPension();
         assertTrue(seleniumExtension().xpath(locatorsCardApplicationPage().pensionCheckbox()).isSelected());
-        assertFalse(seleniumExtension().getAttribute(othersTextfieldXpathWithClassLocator, "style").contains("block"));
+        assertFalse(seleniumExtension().getAttribute(othersTextFieldXpathWithClassLocator, "style").contains("block"));
 
         cardApplication().uncheckPension();
         assertTrue(seleniumExtension().xpath(locatorsCardApplicationPage().pensionCheckbox()).isUnselected());
-        assertFalse(seleniumExtension().getAttribute(othersTextfieldXpathWithClassLocator, "style").contains("block"));
+        assertFalse(seleniumExtension().getAttribute(othersTextFieldXpathWithClassLocator, "style").contains("block"));
     }
 
     @Test(dependsOnMethods = "verifyPensionCheckboxTest")
     public void verifyOthersCheckboxTest() {
         cardApplication().checkOthers();
         assertTrue(seleniumExtension().xpath(locatorsCardApplicationPage().othersCheckbox()).isSelected());
-        assertTrue(seleniumExtension().getAttribute(othersTextfieldXpathWithClassLocator, "style").contains("block"));
+        assertTrue(seleniumExtension().getAttribute(othersTextFieldXpathWithClassLocator, "style").contains("block"));
 
 
         cardApplication().uncheckOthers();
         assertTrue(seleniumExtension().xpath(locatorsCardApplicationPage().othersCheckbox()).isUnselected());
-        assertFalse(seleniumExtension().getAttribute(othersTextfieldXpathWithClassLocator, "style").contains("block"));
+        assertFalse(seleniumExtension().getAttribute(othersTextFieldXpathWithClassLocator, "style").contains("block"));
     }
 }

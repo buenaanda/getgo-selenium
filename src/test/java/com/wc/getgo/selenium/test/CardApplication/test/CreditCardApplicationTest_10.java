@@ -15,7 +15,7 @@ import static org.testng.Assert.assertTrue;
 
 public class CreditCardApplicationTest_10 extends Seleniumbase {
 
-    //QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg
+    /** QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg **/
 
     private String title = generateFakeData().title();
     private String firstName = generateFakeData().firstName();
@@ -35,7 +35,7 @@ public class CreditCardApplicationTest_10 extends Seleniumbase {
     private String mobileNumber = generateFakeData().mobileNumber();
     private String employmentStatus = "Retired";
     private String sss = generateFakeData().sssNumber();
-    private String grossAnualIncome = generateFakeData().grossAnnualIncome();
+    private String grossAnnualIncome = generateFakeData().grossAnnualIncome();
 
     @Test
     public void verifyCustomerAgreementTest() {
@@ -67,7 +67,7 @@ public class CreditCardApplicationTest_10 extends Seleniumbase {
                 .selectEmploymentStatus(employmentStatus)
                 .clickSSS()
                 .setSSS(sss)
-                .setGrossAnnualIncome(grossAnualIncome)
+                .setGrossAnnualIncome(grossAnnualIncome)
                 .checkSalary()
                 .checkInvestment()
                 .clickBillingUseWorkAddress()

@@ -57,7 +57,7 @@ public class ReviewApplication {
     public Boolean clickEditAdditionalOptions() {
         clickButton(driver).xpath(locatorsReviewApplicationPage().editAdditionalOptionsButton()).click();
         sleep(1000);
-        return seleniumExtension().isElementVisible("xpath", locatorsReviewApplicationPage().supNameToAppearOnCardTextfield());
+        return seleniumExtension().isElementVisible("xpath", locatorsReviewApplicationPage().availSupplementaryCardNoRadioButton());
     }
 
     public ReviewApplication selectSalutation(String title) {
@@ -87,16 +87,16 @@ public class ReviewApplication {
 
     public ReviewApplication selectBirthDate(String month, String year, String day) {
         clickButton(driver).xpath(locatorsReviewApplicationPage().birthdateTextfield()).click();
-        sleep(1000);
+        sleep(500);
         String monthDropdownLocator = "//select[@class='ui-datepicker-month']";
         String yearDropdownLocator = "//select[@class='ui-datepicker-year']";
         dropdown(driver).dropdownLocator(monthDropdownLocator).selectValue(month).select();
-        sleep(1000);
+        sleep(500);
         dropdown(driver).dropdownLocator(yearDropdownLocator).selectValue(year).select();
-        sleep(1000);
+        sleep(500);
         String dayLocator = String.format("//a[contains(@class, 'ui-state') and contains(text(), '%s')]", day);
         clickButton(driver).xpath(dayLocator).click();
-        sleep(1000);
+        sleep(500);
         return this;
     }
 
@@ -143,7 +143,7 @@ public class ReviewApplication {
     public ReviewApplication checkSameAsPresentAddress() {
         if(seleniumExtension().xpath(locatorsReviewApplicationPage().sameAsPresentAddressCheckbox()).isSelected() == false) {
             checkbox(driver).xpath(locatorsReviewApplicationPage().sameAsPresentAddressCheckbox()).check();
-            sleep(2000);
+            sleep(1000);
         }
         return this;
     }
@@ -151,7 +151,7 @@ public class ReviewApplication {
     public ReviewApplication uncheckSameAsPresentAddress() {
         if(seleniumExtension().xpath(locatorsReviewApplicationPage().sameAsPresentAddressCheckbox()).isSelected() == true) {
             checkbox(driver).xpath(locatorsReviewApplicationPage().sameAsPresentAddressCheckbox()).check();
-            sleep(2000);
+            sleep(1000);
         }
         return this;
     }
@@ -469,6 +469,16 @@ public class ReviewApplication {
         return this;
     }
 
+    public ReviewApplication clickExistingCreditCardholderYes() {
+        clickButton(driver).xpath(locatorsReviewApplicationPage().existingCreditCardholderYesRadioButton()).click();
+        return this;
+    }
+
+    public ReviewApplication clickExistingCreditCardholderNo() {
+        clickButton(driver).xpath(locatorsReviewApplicationPage().existingCreditCardholderNoRadioButton()).click();
+        return this;
+    }
+
     public ReviewApplication selectCardBankName1(String cardBankName1) {
         try {
             dropdown(driver).dropdownLocator(locatorsReviewApplicationPage().cardBankName1Dropdown()).selectValue(cardBankName1).select();
@@ -499,7 +509,7 @@ public class ReviewApplication {
 
     public ReviewApplication clickAdd() {
         clickButton(driver).xpath(locatorsReviewApplicationPage().addCreditCardButton()).click();
-        sleep(2000);
+        sleep(1000);
         return this;
     }
 
@@ -515,19 +525,19 @@ public class ReviewApplication {
             screen.mouseMove("images/browse.png");
         }
         screen.doubleClick();
-        sleep(8000);
+        sleep(5000);
         return this;
     }
 
     public ReviewApplication searchFile(String filename) {
         screen.type(locatorsReviewApplicationPage().searchField(), filename);
-        sleep(5000);
+        sleep(3000);
         return this;
     }
 
     public ReviewApplication clickFile(String filePath) throws FindFailed {
         screen.doubleClick(filePath);
-        sleep(3000);
+        sleep(1000);
         return this;
     }
 
@@ -538,7 +548,7 @@ public class ReviewApplication {
             screen.mouseMove("images/browse.png");
         }
         screen.doubleClick();
-        sleep(8000);
+        sleep(5000);
         return this;
     }
 
@@ -570,6 +580,18 @@ public class ReviewApplication {
 
     public ReviewApplication clickDeliveryWorkAddress() {
         clickButton(driver).xpath(locatorsReviewApplicationPage().useDeliveryWorkAddressRadioButton()).click();
+        return this;
+    }
+
+    public ReviewApplication clickAvailSupplementaryCardYes() {
+        clickButton(driver).xpath(locatorsReviewApplicationPage().availSupplementaryCardYesRadioButton()).click();
+        sleep(1000);
+        return this;
+    }
+
+    public ReviewApplication clickAvailSupplementaryCardNo() {
+        clickButton(driver).xpath(locatorsReviewApplicationPage().availSupplementaryCardNoRadioButton()).click();
+        sleep(1000);
         return this;
     }
 
@@ -621,7 +643,7 @@ public class ReviewApplication {
     public ReviewApplication checkSupSameAsPresentAddress() {
         if(seleniumExtension().xpath(locatorsReviewApplicationPage().supplementarySameAsPresentAddressCheckbox()).isSelected() == false) {
             checkbox(driver).xpath(locatorsReviewApplicationPage().supplementarySameAsPresentAddressCheckbox()).check();
-            sleep(2000);
+            sleep(1000);
         }
         return this;
     }
@@ -629,7 +651,7 @@ public class ReviewApplication {
     public ReviewApplication uncheckSupSameAsPresentAddress() {
         if(seleniumExtension().xpath(locatorsReviewApplicationPage().supplementarySameAsPresentAddressCheckbox()).isSelected() == true) {
             checkbox(driver).xpath(locatorsReviewApplicationPage().supplementarySameAsPresentAddressCheckbox()).check();
-            sleep(2000);
+            sleep(1000);
         }
         return this;
     }
@@ -703,7 +725,11 @@ public class ReviewApplication {
         seleniumExtension().waitForElementVisible("xpath", locatorsReviewApplicationPage().submitFormButton());
         clickButton(driver).xpath(locatorsReviewApplicationPage().submitFormButton()).click();
         seleniumExtension().waitForElementVisible("xpath", locatorsReviewApplicationPage().continueButton());
-        return seleniumExtension().isElementVisible("xpath", locatorsReviewApplicationPage().continueButton());
+        boolean result = seleniumExtension().isElementVisible("xpath", locatorsReviewApplicationPage().continueButton());
+        if(result == false) {
+            sleep(5000);//wait for another 5 seconds
+        }
+        return result;
     }
 
     public Boolean clickContinue() {

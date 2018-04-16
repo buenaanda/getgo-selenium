@@ -46,7 +46,7 @@ public class SelectizeDropdown {
         String dropdownTextfieldLocator = String.format("%s/input", dropdownLocator);
         driver.findElement(By.xpath(dropdownTextfieldLocator)).sendKeys(Keys.BACK_SPACE);
         driver.findElement(By.xpath(dropdownTextfieldLocator)).sendKeys(text);
-        sleep(1000);
+        sleep(500);
         return this;
     }
 

@@ -17,7 +17,7 @@ import static org.testng.Assert.assertTrue;
 
 public class DebitCardApplicationTest_4 extends Seleniumbase {
 
-    //QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg
+    /** QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg **/
 
     private String title = generateFakeData().title();
     private String firstName = generateFakeData().firstName();
@@ -74,8 +74,6 @@ public class DebitCardApplicationTest_4 extends Seleniumbase {
                 .setBusinessAddress(businessAddress)
                 .selectWorkProvince(businessProvince)
                 .selectWorkCity(businessCity)
-                .setWorkPhoneNumberAreaCode(businessPhoneNumberAreaCode)
-                .setWorkPhoneNumber(businessPhoneNumber)
                 .clickGSIS()
                 .setGSIS(gsis)
                 .selectEmploymentStatus("Student")
@@ -94,8 +92,6 @@ public class DebitCardApplicationTest_4 extends Seleniumbase {
                 .setBusinessAddress(businessAddress)
                 .selectWorkProvince(businessProvince)
                 .selectWorkCity(businessCity)
-                .setWorkPhoneNumberAreaCode(businessPhoneNumberAreaCode)
-                .setWorkPhoneNumber(businessPhoneNumber)
                 .clickSubmitForm());
         String idPresentedErrorLocator = "//small[@data-bv-for='tinsssgsis']";
         assertEquals(seleniumExtension().getText("xpath", idPresentedErrorLocator), "Please choose a presented ID.");
@@ -106,7 +102,7 @@ public class DebitCardApplicationTest_4 extends Seleniumbase {
     }
 
     @Test(dependsOnMethods = "verifyIssueNumber20Test")
-    public void verifyIssueNumber40_47Test() {
+    public void verifyIssueNumber40_47_50Test() {
         assertTrue(navigationMenu().clickDebitCard());
         assertTrue(banner().clickDebitCardApplyNow());
         assertTrue(banner().clickNotSure());
@@ -135,26 +131,32 @@ public class DebitCardApplicationTest_4 extends Seleniumbase {
                 .setBusinessAddress(businessAddress)
                 .selectWorkProvince(businessProvince)
                 .selectWorkCity(businessCity)
-                .setWorkPhoneNumberAreaCode(businessPhoneNumberAreaCode)
-                .setWorkPhoneNumber(businessPhoneNumber)
                 .clickGSIS()
                 .setGSIS(gsis)
                 .checkSalary()
-                .clickUseWorkAddress();
-        cardApplication().checkAgreement();
-        cardApplication().checkImNotARobot();
+                .clickUseWorkAddress()
+                .checkAgreement();
+        assertFalse(cardApplication().clickSubmitForm());
+        cardApplication().checkAgreement().checkImNotARobot();
+        assertTrue(cardApplication().clickSubmitForm());
+        sleep(180000);
+        assertFalse(reviewApplication().clickSubmitForm());
+        cardApplication()
+                .setWorkPhoneNumberAreaCode(businessPhoneNumberAreaCode)
+                .setWorkPhoneNumber(businessPhoneNumber)
+                .checkAgreement()
+                .checkImNotARobot();
         assertTrue(cardApplication().clickSubmitForm());
         sleep(180000);
         assertFalse(reviewApplication().clickSubmitForm());
         assertEquals(seleniumExtension().getValue("xpath", locatorsCardApplicationPage().workPhoneNumberAreaCodeTextfield()), businessPhoneNumberAreaCode);
         assertEquals(seleniumExtension().getValue("xpath", locatorsCardApplicationPage().workPhoneNumberTextfield()), businessPhoneNumber);
+        assertEquals(seleniumExtension().getText("xpath", locatorsCardApplicationPage().workCityDropdown()).toUpperCase(), businessCity.toUpperCase());
         cardApplication()
-                .uncheckAgreement()
                 .checkAgreement()
                 .checkImNotARobot();
         assertTrue(cardApplication().clickSubmitForm());
         assertTrue(reviewApplication().clickSubmitForm());
         assertTrue(reviewApplication().clickContinue());
-
     }
 }

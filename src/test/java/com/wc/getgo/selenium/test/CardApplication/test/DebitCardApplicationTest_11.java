@@ -7,10 +7,8 @@ import static com.wc.getgo.selenium.global.GenerateFakeData.generateFakeData;
 import static com.wc.getgo.selenium.global.Loader.loader;
 import static com.wc.getgo.selenium.global.SeleniumExtension.seleniumExtension;
 import static com.wc.getgo.selenium.global.Sleep.sleep;
-import static com.wc.getgo.selenium.test.Banner.method.Banner.banner;
 import static com.wc.getgo.selenium.test.CardApplication.locator.LocatorsCardApplicationPage.locatorsCardApplicationPage;
 import static com.wc.getgo.selenium.test.CardApplication.method.CardApplication.cardApplication;
-import static com.wc.getgo.selenium.test.Menu.method.NavigationMenu.navigationMenu;
 import static com.wc.getgo.selenium.test.ReviewApplication.method.ReviewApplication.reviewApplication;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
@@ -18,7 +16,8 @@ import static org.testng.Assert.assertTrue;
 
 public class DebitCardApplicationTest_11 extends Seleniumbase {
 
-    //QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg
+    /** QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg **/
+
     private String mainURL = url;
     private String validUrl = String.format("%s/apply/registration?member=no&ggn=&con_ggn=&debitcard=1&next=Next", mainURL);
     private String validUrl2 = String.format("%s/apply/registration?member=no&ggn=&con_ggn=&debitcard=01&next=Next", mainURL);

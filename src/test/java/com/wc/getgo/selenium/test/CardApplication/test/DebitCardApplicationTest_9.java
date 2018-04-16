@@ -18,7 +18,7 @@ import static org.testng.Assert.assertTrue;
 
 public class DebitCardApplicationTest_9 extends Seleniumbase {
 
-    //QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg
+    /** QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg **/
 
     private String title = generateFakeData().title();
     private String firstName = generateFakeData().firstName();
@@ -33,7 +33,7 @@ public class DebitCardApplicationTest_9 extends Seleniumbase {
     private String emailAddress = generateFakeData().email();
     private String mobileNumberAreaCode = generateFakeData().mobileAreaCode();
     private String mobileNumber = generateFakeData().mobileNumber();
-    private String birthdate = "1994-02-08";
+    private String birthDate = "1994-02-08";
 
     private String employmentStatus = generateFakeData().employmentStatus();
     private String employerOrBusinessName = generateFakeData().companyName();
@@ -91,7 +91,7 @@ public class DebitCardApplicationTest_9 extends Seleniumbase {
         assertEquals(alertErrorMessage().getAlertErrorMessage(), "Warning: Please fill out all required fields and check the input fields again.\n" +
                 "The Captcha must be accepted.\n" +
                 "Note: If you have an uploaded file, please check if it is still in the field.");
-        assertEquals(seleniumExtension().getValue("xpath", locatorsCardApplicationPage().birthdateTextfield()), birthdate);
+        assertEquals(seleniumExtension().getValue("xpath", locatorsCardApplicationPage().birthdateTextfield()), birthDate);
         assertEquals(seleniumExtension().getValue("xpath", locatorsCardApplicationPage().nationalityOrCitizenshipTextfield()), nationalityOrCitizenship.toUpperCase());
     }
 }

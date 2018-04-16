@@ -4,7 +4,9 @@ import com.wc.getgo.selenium.common.Seleniumbase;
 import org.testng.annotations.Test;
 
 import static com.wc.getgo.selenium.global.GenerateFakeData.generateFakeData;
+import static com.wc.getgo.selenium.global.SeleniumExtension.seleniumExtension;
 import static com.wc.getgo.selenium.test.Banner.method.Banner.banner;
+import static com.wc.getgo.selenium.test.CardApplication.locator.LocatorsCardApplicationPage.locatorsCardApplicationPage;
 import static com.wc.getgo.selenium.test.CardApplication.method.CardApplication.cardApplication;
 import static com.wc.getgo.selenium.test.Menu.method.NavigationMenu.navigationMenu;
 import static com.wc.getgo.selenium.test.ReviewApplication.method.ReviewApplication.reviewApplication;
@@ -13,7 +15,7 @@ import static org.testng.Assert.assertTrue;
 
 public class CreditCardApplicationTest_8 extends Seleniumbase {
 
-    //QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg
+    /** QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg **/
 
     private String title = generateFakeData().title();
     private String firstName = generateFakeData().firstName();
@@ -68,7 +70,6 @@ public class CreditCardApplicationTest_8 extends Seleniumbase {
 
         String currentUrl = driver.getCurrentUrl();
         driver.get(currentUrl);
-
         assertTrue(reviewApplication().clickSubmitForm());
         assertTrue(reviewApplication().clickContinue());
     }
@@ -107,7 +108,7 @@ public class CreditCardApplicationTest_8 extends Seleniumbase {
         apply();
 
         driver.navigate().back();
-        assertFalse(cardApplication().clickSubmitForm());
+        assertFalse(seleniumExtension().isElementVisible("xpath", locatorsCardApplicationPage().submitFormButton()));
         driver.navigate().forward();
         assertTrue(reviewApplication().clickSubmitForm());
         assertTrue(reviewApplication().clickContinue());

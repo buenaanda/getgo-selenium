@@ -14,7 +14,7 @@ import java.io.IOException;
 public class Seleniumbase {
 
     public static WebDriver driver;
-    public static String url = "http://10.51.1.131";
+    public static String url = "http://10.51.1.131";//UAT
     //public static String url = "https://getgo.unionbankph.com";
 
     @BeforeClass

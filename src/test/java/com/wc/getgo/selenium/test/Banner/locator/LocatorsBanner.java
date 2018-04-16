@@ -34,6 +34,10 @@ public class LocatorsBanner {
         return "//div[@style='display: block;']/div/div/form/div/div/div/div/div/input[@id='yes']";
     }
 
+    public String getGoNumberTextfield() {
+        return "//div[@style='display: block;']/div/div//form/div/div[2]/div[1]/div[2]/div[1]/div[1]/input[@name='ggn']";
+    }
+
     public String noRadioButton() {
         return "//div[@style='display: block;']/div/div/form/div/div/div/div/div/input[@id='no']";
     }

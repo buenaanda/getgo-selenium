@@ -36,6 +36,9 @@ public class SeleniumExtension {
             if(label == "xpath") {
                 element = (new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
             }
+            if(label == "id") {
+                element = (new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(By.id(locator)));
+            }
         } catch(TimeoutException e) {
             return false;
         }
@@ -46,6 +49,9 @@ public class SeleniumExtension {
         try {
             if(label == "xpath") {
                 element1 = (new WebDriverWait(driver, 10)).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(locator)));
+            }
+            if(label == "id") {
+                element1 = (new WebDriverWait(driver, 10)).until(ExpectedConditions.invisibilityOfElementLocated(By.id(locator)));
             }
         } catch(TimeoutException e) {
 

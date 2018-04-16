@@ -28,6 +28,23 @@
             <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardApplicationTest_12"/>
             <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardApplicationTest_13"/>
             <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardApplicationTest_14"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardApplicationTest_15"/>
+
+            <!--<class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardRegistration_Fail_ActiveNo_Review_Success_Test"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardRegistration_Fail_ActiveYes_Registration_Review_Fail_Success_Test"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardRegistration_Fail_ActiveYes_Registration_Review_Success_Test"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardRegistration_Fail_Review_Fail_Success_Test"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardRegistration_Fail_Review_Success_Test"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardRegistration_Review_ActiveNo_Fail_Review_Fail_Success_Test"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardRegistration_Review_ActiveNo_Review_Fail_Success_Test"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardRegistration_Review_ActiveNo_Review_Success_Test"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardRegistration_Review_ActiveYes_Registration_Fail_Review_Fail_Success_Test"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardRegistration_Review_ActiveYes_Registration_Fail_Review_Success_Test"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardRegistration_Review_ActiveYes_Registration_Review_Fail_Success_Test"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardRegistration_Review_ActiveYes_Registration_Review_Success_Test"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardRegistration_Review_CreditCard_ActiveYes_Registration_Review_Success_Test"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardRegistration_Review_Fail_Review_Success_Test"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.DebitCardRegistration_Review_Success_Test"/>-->
         </classes>
     </test>
 
@@ -45,6 +62,19 @@
             <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardApplicationTest_10"/>
             <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardApplicationTest_11"/>
             <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardApplicationTest_12"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardApplicationTest_13"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardApplicationTest_15"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardApplicationTest_16"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardApplicationTest_17"/>
+
+            <!--<class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardRegistration_Fail_ActiveNo_Review_Success_Test"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardRegistration_Review_ActiveNo_Fail_Review_Fail_Success_Test"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardRegistration_Review_ActiveNo_Review_Success_Test"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardRegistration_Review_ActiveYes_Registration_Fail_Review_Fail_Success_Test"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardRegistration_Review_ActiveYes_Registration_Review_Success_Test"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardRegistration_Review_Fail_Registration_Fail_Review_Success_Test"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardRegistration_Review_Success_Test"/>
+            <class name="com.wc.getgo.selenium.test.CardApplication.test.CreditCardRegistration_Review_DebitCard_ActiveYes_Registration_Review_Success_Test"/>-->
         </classes>
     </test>
 </suite>

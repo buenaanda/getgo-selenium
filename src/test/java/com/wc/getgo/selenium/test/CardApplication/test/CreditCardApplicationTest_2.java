@@ -19,7 +19,7 @@ import static org.testng.Assert.assertTrue;
 
 public class CreditCardApplicationTest_2 extends Seleniumbase {
 
-    //QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg
+    /** QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg **/
 
     private String title = generateFakeData().title();
     private String firstName = generateFakeData().firstName();
@@ -53,7 +53,7 @@ public class CreditCardApplicationTest_2 extends Seleniumbase {
     private String supBMonth = "Nov";
     private String supBYear = "2018";
     private String supDay = "23";
-    private String supBirthdate = String.format("%s-%s-%s", supBYear, "11", supDay);
+    private String supBirthDate = String.format("%s-%s-%s", supBYear, "11", supDay);
     private String relationshipWithThePrincipal = generateFakeData().relationshipWithPrincipal();
     private String supPresentAddress = generateFakeData().address();
     private String supPermanentAddress = generateFakeData().address();
@@ -159,7 +159,7 @@ public class CreditCardApplicationTest_2 extends Seleniumbase {
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,300)", "");
-        sleep(2000);
+        sleep(500);
 
         cardApplication()
                 .clickUploadAcceptableIds().searchFile("validID.jpg").clickFile("images/validID.png");
@@ -266,7 +266,7 @@ public class CreditCardApplicationTest_2 extends Seleniumbase {
         assertEquals(seleniumExtension().getText("xpath", locatorsReviewApplicationPage().supMiddlename()), supMiddleName.toUpperCase());
         assertEquals(seleniumExtension().getText("xpath", locatorsReviewApplicationPage().supLastname()), supLastName.toUpperCase());
         assertEquals(seleniumExtension().getText("xpath", locatorsReviewApplicationPage().supNameToAppearOnCard()), supNameToAppearOnCard.toUpperCase());
-        assertEquals(seleniumExtension().getText("xpath", locatorsReviewApplicationPage().supNameBirthdate()), supBirthdate);
+        assertEquals(seleniumExtension().getText("xpath", locatorsReviewApplicationPage().supNameBirthdate()), supBirthDate);
         assertEquals(seleniumExtension().getText("xpath", locatorsReviewApplicationPage().relationshipWithPrincipal()), relationshipWithThePrincipal.toUpperCase());
         assertEquals(seleniumExtension().getText("xpath", locatorsReviewApplicationPage().supPresentAddress()), supPresentAddress.toUpperCase());
         assertEquals(seleniumExtension().getText("xpath", locatorsReviewApplicationPage().supPermanentAddress()), supPermanentAddress.toUpperCase());
@@ -320,7 +320,7 @@ public class CreditCardApplicationTest_2 extends Seleniumbase {
         System.out.println("supBMonth: " + supBMonth);
         System.out.println("supBYear: " + supBYear);
         System.out.println("supDay: " + supDay);
-        System.out.println("supBirthdate: " + supBirthdate);
+        System.out.println("supBirthDate: " + supBirthDate);
         System.out.println("relationshipWithThePrincipal: " + relationshipWithThePrincipal);
         System.out.println("supPresentAddress: " + supPresentAddress);
         System.out.println("supPermanentAddress: " + supPermanentAddress);
@@ -345,7 +345,7 @@ public class CreditCardApplicationTest_2 extends Seleniumbase {
         System.out.println("sourceOfFunds2: " + sourceOfFunds2);
         System.out.println("sourceOfFunds2: " + sourceOfFunds2);
         System.out.println("totalYearsInWorkOrBusiness: " + totalYearsInWorkOrBusiness);
-        System.out.println("grossAnualIncome: " + grossAnnualIncome);
+        System.out.println("grossAnnualIncome: " + grossAnnualIncome);
         System.out.println("billingAddress: " + billingAddress);
         System.out.println("deliveryAddress: " + deliveryAddress);
         System.out.println("cardBankName1: " + cardBankName1);

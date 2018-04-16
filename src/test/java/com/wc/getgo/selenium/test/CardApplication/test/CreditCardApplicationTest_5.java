@@ -18,7 +18,7 @@ import static org.testng.Assert.assertTrue;
 
 public class CreditCardApplicationTest_5 extends Seleniumbase {
 
-    //QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg
+    /** QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg **/
 
     private String title = generateFakeData().title();
     private String firstName = generateFakeData().firstName();
@@ -52,7 +52,7 @@ public class CreditCardApplicationTest_5 extends Seleniumbase {
     private String businessPhoneNumber = generateFakeData().phoneNumber();
     private String tin = generateFakeData().tin();
     private String totalYearsInWorkOrBusiness = generateFakeData().yearsOfStay();
-    private String grossAnualIncome = generateFakeData().grossAnnualIncome();
+    private String grossAnnualIncome = generateFakeData().grossAnnualIncome();
 
     @Test
     public void verifyIssueNumber21Test() throws FindFailed {
@@ -94,7 +94,7 @@ public class CreditCardApplicationTest_5 extends Seleniumbase {
                 .setWorkPhoneNumber(businessPhoneNumber)
                 .clickTIN()
                 .setTIN(tin)
-                .setGrossAnnualIncome(grossAnualIncome)
+                .setGrossAnnualIncome(grossAnnualIncome)
                 .checkPension()
                 .clickExistingCreditCardholderYes()
                 .selectCardBankName1("Banco De Oro")

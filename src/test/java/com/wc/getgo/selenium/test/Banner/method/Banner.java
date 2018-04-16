@@ -4,6 +4,7 @@ import static com.wc.getgo.selenium.common.Seleniumbase.driver;
 import static com.wc.getgo.selenium.global.SeleniumExtension.seleniumExtension;
 import static com.wc.getgo.selenium.global.Sleep.sleep;
 import static com.wc.getgo.selenium.object.ClickButton.clickButton;
+import static com.wc.getgo.selenium.object.Textfield.textfield;
 import static com.wc.getgo.selenium.test.Banner.locator.LocatorsBanner.locatorsBanner;
 import static com.wc.getgo.selenium.test.CardApplication.locator.LocatorsCardApplicationPage.locatorsCardApplicationPage;
 
@@ -45,6 +46,8 @@ public class Banner {
 
     public boolean clickYes() {
         clickButton(driver).xpath(locatorsBanner().yesRadioButton()).click();
+        sleep(1000);
+        textfield(driver).xpath(locatorsBanner().getGoNumberTextfield()).setText("0000000000");
         sleep(1500);
         return seleniumExtension().isElementVisible("xpath", locatorsBanner().nextButton());
     }

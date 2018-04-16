@@ -12,6 +12,8 @@ import static org.testng.Assert.assertTrue;
 
 public class DebitCardApplicationTest_8 extends Seleniumbase {
 
+    /** QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg **/
+
     private String title = generateFakeData().title();
     private String firstName = generateFakeData().firstName();
     private String middleName = generateFakeData().middleName();

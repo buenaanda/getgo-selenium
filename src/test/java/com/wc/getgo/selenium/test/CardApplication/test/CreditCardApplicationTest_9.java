@@ -18,7 +18,7 @@ import static org.testng.Assert.assertTrue;
 
 public class CreditCardApplicationTest_9 extends Seleniumbase {
 
-    //QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg
+    /** QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg **/
 
     private String title = generateFakeData().title();
     private String firstName = generateFakeData().firstName();
@@ -38,8 +38,8 @@ public class CreditCardApplicationTest_9 extends Seleniumbase {
     private String mobileNumber = generateFakeData().mobileNumber();
     private String employmentStatus = "Retired";
     private String sss = generateFakeData().sssNumber();
-    private String grossAnualIncome = generateFakeData().grossAnnualIncome();
-    private String birthdate = "1993-08-30";
+    private String grossAnnualIncome = generateFakeData().grossAnnualIncome();
+    private String birthDate = "1993-08-30";
 
     @Test
     public void verifyIssueNumber5Test() {
@@ -70,7 +70,7 @@ public class CreditCardApplicationTest_9 extends Seleniumbase {
                 .selectEmploymentStatus(employmentStatus)
                 .clickSSS()
                 .setSSS(sss)
-                .setGrossAnnualIncome(grossAnualIncome)
+                .setGrossAnnualIncome(grossAnnualIncome)
                 .checkSalary()
                 .checkInvestment()
                 .clickBillingUseWorkAddress()
@@ -84,7 +84,7 @@ public class CreditCardApplicationTest_9 extends Seleniumbase {
         assertEquals(alertErrorMessage().getAlertErrorMessage(), "Warning: Please fill out all required fields and check the input fields again.\n" +
                 "The Captcha must be accepted.\n" +
                 "Note: If you have an uploaded file, please check if it is still in the field.");
-        assertEquals(seleniumExtension().getValue("xpath", locatorsCardApplicationPage().birthdateTextfield()), birthdate);
+        assertEquals(seleniumExtension().getValue("xpath", locatorsCardApplicationPage().birthdateTextfield()), birthDate);
         cardApplication().checkAgreement().checkImNotARobot();
         assertTrue(cardApplication().clickSubmitForm());
         assertTrue(reviewApplication().clickSubmitForm());

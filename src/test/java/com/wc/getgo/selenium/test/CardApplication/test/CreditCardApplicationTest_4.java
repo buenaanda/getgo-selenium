@@ -18,11 +18,10 @@ import static org.testng.Assert.assertTrue;
 
 public class CreditCardApplicationTest_4 extends Seleniumbase {
 
-    //QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg
+    /** QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg **/
 
     private String title = generateFakeData().title();
     private String firstName = generateFakeData().firstName();
-    private String middleName = "Buena";
     private String lastName = generateFakeData().lastName();
     private String mothersMaidenName = String.format("%s %s %s", generateFakeData().firstName(), "M", generateFakeData().lastName());
     private String placeOfBirth = generateFakeData().placeOfBirth();
@@ -39,24 +38,13 @@ public class CreditCardApplicationTest_4 extends Seleniumbase {
     private String emailAddress = generateFakeData().email();
     private String mobileNumberAreaCode = generateFakeData().mobileAreaCode();
     private String mobileNumber = generateFakeData().mobileNumber();
-    private String phoneNumberAreaCode = generateFakeData().phoneAreaCode();
-    private String phoneNumber = generateFakeData().phoneNumber();
     private String supSalutation = generateFakeData().supTitle();
     private String supFirstName = generateFakeData().firstName();
-    private String supMiddleName = "Anda";
     private String supLastName = generateFakeData().lastName();
     private String supBMonth = generateFakeData().birthMonth();
     private String supBYear = generateFakeData().birthYear();
     private String supDay = generateFakeData().birthDay();
     private String relationshipWithThePrincipal = generateFakeData().relationshipWithPrincipal();
-    private String supPresentAddress = generateFakeData().address();
-    private String supPermanentAddress = generateFakeData().address();
-    private String supEmailAddress = generateFakeData().email();
-    private String supMobileNumberAreaCode = generateFakeData().mobileAreaCode();
-    private String supMobileNumber = generateFakeData().mobileNumber();
-    private String supPhoneNumberAreaCode = generateFakeData().phoneAreaCode();
-    private String supPhoneNumber = generateFakeData().phoneNumber();
-    private String supGsis = generateFakeData().gsisNumber();
     private String subLimit = generateFakeData().subLimitAmount();
 
     private String employmentStatus = generateFakeData().employmentStatus();
@@ -71,7 +59,7 @@ public class CreditCardApplicationTest_4 extends Seleniumbase {
     private String businessPhoneNumber = generateFakeData().phoneNumber();
     private String gsis = generateFakeData().gsisNumber();
     private String totalYearsInWorkOrBusiness = generateFakeData().yearsOfStay();
-    private String grossAnualIncome = generateFakeData().grossAnnualIncome();
+    private String grossAnnualIncome = generateFakeData().grossAnnualIncome();
 
     private String cardBankName1 = "Citibank";
     private String cardBankName2 = "Banco De Oro";
@@ -79,7 +67,7 @@ public class CreditCardApplicationTest_4 extends Seleniumbase {
     private String cardBankNumber2 = generateFakeData().creditCardNumber();
 
     @Test
-    public void verifyIssueNumber36_47_41Test() {
+    public void verifyIssueNumber36_47_41_50Test() {
         assertTrue(navigationMenu().clickCreditCard());
         assertTrue(banner().clickPlatinum());
         assertTrue(banner().clickApplyForPlatinum());
@@ -89,7 +77,6 @@ public class CreditCardApplicationTest_4 extends Seleniumbase {
         cardApplication()
                 .selectSalutation(title)
                 .setFirstName(firstName)
-                .setMiddleName(middleName)
                 .setLastName(lastName)
                 .selectBirthDate(generateFakeData().birthMonth(), generateFakeData().birthYear(), generateFakeData().birthDay())
                 .setPlaceOfBirth(placeOfBirth)
@@ -116,13 +103,11 @@ public class CreditCardApplicationTest_4 extends Seleniumbase {
                 .selectWorkProvince(businessProvince)
                 .selectWorkCity(businessCity)
                 .setTotalYearsInWorkOrBusiness(totalYearsInWorkOrBusiness)
-                .setWorkPhoneNumberAreaCode(businessPhoneNumberAreaCode)
-                .setWorkPhoneNumber(businessPhoneNumber)
                 .clickBillingUseWorkAddress()
                 .clickCardDeliveryUseWorkAddress()
                 .clickGSIS()
                 .setGSIS(gsis)
-                .setGrossAnnualIncome(grossAnualIncome)
+                .setGrossAnnualIncome(grossAnnualIncome)
                 .checkSalary()
                 .checkInvestment()
                 .clickExistingCreditCardholderYes()
@@ -131,29 +116,16 @@ public class CreditCardApplicationTest_4 extends Seleniumbase {
                 .clickAdd()
                 .selectCardBankName2(cardBankName2)
                 .setCreditCardNumber2(cardBankNumber2)
-                .setPhoneNumberAreaCode(phoneNumberAreaCode)
-                .setPhoneNumber(phoneNumber)
                 .clickAvailSupplementaryCardYes()
                 .selectSupSalutation(supSalutation)
                 .setSupFirstName(supFirstName)
-                .setSupMiddleName(supMiddleName)
                 .setSupLastName(supLastName)
                 .selectSupBirthDate(supBMonth, supBYear, supDay)
                 .setRelationshipWithPrincipal(relationshipWithThePrincipal)
-                .setSupPresentAddress(supPresentAddress)
-                .setSupPermanentAddress(supPermanentAddress)
-                .setSupEmailAddress(supEmailAddress)
-                .setSupMobileNumberAreaCode(supMobileNumberAreaCode)
-                .setSupMobileNumber(supMobileNumber)
-                .setSupPhoneNumberAreaCode(supPhoneNumberAreaCode)
-                .setSupPhoneNumber(supPhoneNumber)
-                .clickSupGSIS()
-                .setSupGSIS(supGsis)
                 .setSubLimit(subLimit)
-                .checkAgreement()
-                .checkImNotARobot();
-        sleep(180000);
+                .checkAgreement();
         assertFalse(cardApplication().clickSubmitForm());
+        assertEquals(seleniumExtension().getText("xpath", locatorsCardApplicationPage().workCityDropdown()), businessCity.toUpperCase());
         cardApplication()
                 .uncheckAgreement()
                 .checkAgreement()
@@ -161,16 +133,23 @@ public class CreditCardApplicationTest_4 extends Seleniumbase {
         assertTrue(cardApplication().clickSubmitForm());
     }
 
-    @Test(dependsOnMethods = "verifyIssueNumber36_47_41Test")
+    @Test(dependsOnMethods = "verifyIssueNumber36_47_41_50Test")
     public void verifyIssueNumber40Test() {
+        sleep(180000);
+        assertFalse(reviewApplication().clickSubmitForm());
+
+        cardApplication()
+                .setWorkPhoneNumberAreaCode(businessPhoneNumberAreaCode)
+                .setWorkPhoneNumber(businessPhoneNumber)
+                .uncheckAgreement()
+                .checkAgreement()
+                .checkImNotARobot();
+        assertTrue(cardApplication().clickSubmitForm());
         sleep(180000);
         assertFalse(reviewApplication().clickSubmitForm());
         assertEquals(seleniumExtension().getValue("xpath", locatorsCardApplicationPage().workPhoneNumberAreaCodeTextfield()), businessPhoneNumberAreaCode);
         assertEquals(seleniumExtension().getValue("xpath", locatorsCardApplicationPage().workPhoneNumberTextfield()), businessPhoneNumber);
-        cardApplication()
-                .uncheckAgreement()
-                .checkAgreement()
-                .checkImNotARobot();
+        cardApplication().checkAgreement().checkImNotARobot();
         assertTrue(cardApplication().clickSubmitForm());
         assertTrue(reviewApplication().clickSubmitForm());
         assertTrue(reviewApplication().clickContinue());

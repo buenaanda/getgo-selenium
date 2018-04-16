@@ -261,6 +261,14 @@ public class LocatorsReviewApplicationPage {
         return "//*[@id=\"cardsotherbank\"]";
     }
 
+    public String existingCreditCardholderYesRadioButton() {
+        return "//input[@name='cardholder' and @value='1']";
+    }
+
+    public String existingCreditCardholderNoRadioButton() {
+        return "//input[@name='cardholder' and @value='0']";
+    }
+
     public String creditCardRowNumber1() {
         return "//*[@id=\"financial-info\"]/div[2]/div[5]/div[2]/div[2]/div[1]/span";
     }

@@ -324,7 +324,7 @@ public class LocatorsCardApplicationPage {
     }
 
     public String billingAddressUseWorkAddressRadioButton() {
-        return "//input[@id='billingaddress1']";
+        return "//input[@id='billingaddress2']";
     }
 
     public String cardDeliveryUsePresentAddressRadioButton() {
@@ -332,7 +332,7 @@ public class LocatorsCardApplicationPage {
     }
 
     public String cardDeliveryUseWorkAddressRadioButton() {
-        return "//input[@id='deliveryaddress1']";
+        return "//input[@id='deliveryaddress2']";
     }
 
     //ADDITIONAL OPTIONS

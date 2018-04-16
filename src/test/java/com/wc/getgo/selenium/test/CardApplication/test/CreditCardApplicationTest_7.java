@@ -3,6 +3,7 @@ package com.wc.getgo.selenium.test.CardApplication.test;
 import com.wc.getgo.selenium.common.Seleniumbase;
 import org.testng.annotations.Test;
 
+import static com.wc.getgo.selenium.global.ActiveApplication.activeApplication;
 import static com.wc.getgo.selenium.global.GenerateFakeData.generateFakeData;
 import static com.wc.getgo.selenium.global.SeleniumExtension.seleniumExtension;
 import static com.wc.getgo.selenium.test.Banner.method.Banner.banner;
@@ -16,7 +17,7 @@ import static org.testng.Assert.assertTrue;
 
 public class CreditCardApplicationTest_7 extends Seleniumbase {
 
-    //QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg
+    /** QA Report URL: https://docs.google.com/spreadsheets/d/1Vg5p_TWKd7y_ddan48A2ZYt_CEP-sXcLzb09NMW0rDg **/
 
     private String title = generateFakeData().title();
     private String firstName = generateFakeData().firstName();
@@ -47,7 +48,7 @@ public class CreditCardApplicationTest_7 extends Seleniumbase {
 
     private String occupationGroup = generateFakeData().occupationGroup();
     private String totalYearsInWorkOrBusiness = generateFakeData().yearsOfStay();
-    private String grossAnualIncome = generateFakeData().grossAnnualIncome();
+    private String grossAnnualIncome = generateFakeData().grossAnnualIncome();
     private String homeOwnership = generateFakeData().homeOwnership();
     private String yearsOfStay = generateFakeData().yearsOfStay();
 
@@ -92,7 +93,7 @@ public class CreditCardApplicationTest_7 extends Seleniumbase {
                 .setTIN("123")
                 .clickSSS()
                 .setSSS(sss)
-                .setGrossAnnualIncome(grossAnualIncome)
+                .setGrossAnnualIncome(grossAnnualIncome)
                 .checkPension()
                 .clickBillingUsePresentAddress()
                 .clickCardDeliveryUsePresentAddress()
@@ -118,7 +119,7 @@ public class CreditCardApplicationTest_7 extends Seleniumbase {
         assertEquals(seleniumExtension().getText("xpath", locatorsReviewApplicationPage().phoneNumber()), "---");
     }
 
-    @Test(dependsOnMethods = "verifyIssueNumber26Test")
+    @Test(dependsOnMethods = "verifyReviewFinancialInformationWithCompanyTest")
     public void verifyIssueNumber24Test() {
         String businessAddress2 = String.format("%s, %s %s", businessCity, businessProvince, businessPostalCode);
         assertEquals(seleniumExtension().getText("xpath", locatorsReviewApplicationPage().businessAddress2()), businessAddress2.toUpperCase());
@@ -131,6 +132,7 @@ public class CreditCardApplicationTest_7 extends Seleniumbase {
         assertTrue(banner().clickNo());
         assertFalse(banner().clickNext());
         assertFalse(seleniumExtension().isElementVisible("xpath", locatorsCardApplicationPage().salutationDropdown()));
-        //TODO forget/not forget active application
+        assertTrue(activeApplication().clickYes());
+        assertTrue(seleniumExtension().isElementVisible("xpath", locatorsCardApplicationPage().salutationDropdown()));
     }
 }
